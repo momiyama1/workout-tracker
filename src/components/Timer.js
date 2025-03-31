@@ -48,10 +48,10 @@ const Timer = ({ intervalTime }) => {
   };
 
   return (
-    <div>
+    <div className="timer-container">
       <h3>インターバルタイマー</h3>
-      <div>残り時間: {timeLeft}秒</div>
-      <div>
+      <div className="timer-display">残り時間: {timeLeft}秒</div>
+      <div className="timer-input">
         <label>手動設定時間: </label>
         <input
           type="number"

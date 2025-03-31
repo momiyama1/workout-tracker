@@ -55,7 +55,7 @@ const App = () => {
   const exerciseList = [...new Set(workouts.map(workout => workout.exercise))];  // 種目名の一意なリスト
 
   return (
-    <div>
+    <div className="app-container">
       <h1>筋トレ記録アプリ</h1>
       {error && <div className="error-message">{error}</div>}
       <WorkoutForm onSave={saveWorkout} exerciseList={exerciseList} workouts={workouts} />
