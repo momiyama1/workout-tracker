@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# 筋トレ記録アプリ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+筋トレの記録を簡単に管理できるWebアプリケーションです。種目ごとのセット数と回数を記録し、前回の記録との比較も可能です。
 
-## Available Scripts
+## 主な機能
 
-In the project directory, you can run:
+- 種目の記録（セット数、回数）
+- 前回の記録との比較表示
+- タイマー機能
+- 記録の履歴表示
+- データのローカルストレージ保存
 
-### `npm start`
+## パフォーマンス最適化
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+アプリケーションは以下の最適化を実装しています：
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.memoとuseMemoによる不要な再レンダリングの防止
+- 効率的なデータ構造の使用
+- 条件付きレンダリングの最適化
+- イベントハンドラのメモ化
+- 計算処理の最適化
 
-### `npm test`
+## 使い方
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. 種目の記録
+- 既存の種目を選択するか、新しい種目名を入力
+- セット数を設定
+- 各セットの回数を入力
+- 日付を選択（省略可能、デフォルトは今日の日付）
+- 「保存」ボタンをクリック
 
-### `npm run build`
+### 2. 前回の記録との比較
+- 既存の種目を選択すると、前回の記録が表示されます
+- 回数を入力すると、前回の記録との差分が表示されます
+  - 増加時：緑色で「+N」と表示
+  - 減少時：赤色で「-N」と表示
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. タイマー機能
+- セット間の休憩時間を計測できます
+- デフォルトは60秒に設定されています
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 4. 記録の管理
+- 記録は自動的にローカルストレージに保存されます
+- 同じ種目を保存すると、最新の記録で上書きされます
+- 不要な記録は削除可能です
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 技術スタック
 
-### `npm run eject`
+- React.js
+- CSS3
+- LocalStorage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 開発環境のセットアップ
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. リポジトリをクローン
+```bash
+git clone [repository-url]
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. 依存パッケージのインストール
+```bash
+cd workout-tracker
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. 開発サーバーの起動
+```bash
+npm start
+```
 
-## Learn More
+## 音源のクレジット
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+以下の音源を使用しています：
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 音源「Sky Loop」by FoolBoyMedia (https://freesound.org/people/FoolBoyMedia/sounds/264295/)
